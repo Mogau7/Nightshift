@@ -1,9 +1,9 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
     "backend": {
       "root": "nightshift/backend",
-      "runtime": "rust"
+      "runtime": "rust",
+      "entrypoint": "src/main.rs"
     },
     "frontend": {
       "root": "nightshift/frontend",
