@@ -39,6 +39,14 @@ Then replace the generated files with the ones in this project and delete `src/A
 
 ## API
 
+| Route | Purpose |
+|---|---|
+| `GET /api/state` | Beacons and squads. Sealed beacons show `"ENCRYPTED"` for name, address, photo and PIN |
+| `POST /api/beacons` | Host lights a beacon |
+| `POST /api/squads` | Connector opens a squad and gets a burner code |
+| `POST /api/squads/:code/join` | Night Owl joins. The squad unlocks when it reaches its target size |
+| `POST /api/demo/fast-forward/:beacon_id` | Demo helper: unlock a beacon now |
+
 Sealing is enforced by the server: secrets are not sent to any client until a squad for that beacon is unlocked. It is access control, not encryption at rest, and anyone can read the state once a squad unlocks.
 
 ## Maps
