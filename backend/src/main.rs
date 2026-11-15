@@ -504,6 +504,19 @@ async fn main() {
     axum::serve(listener, app)
         .await
         .expect("the radar server stopped unexpectedly");
+
+    let static_files = ServeDir::new("static")
+    .not_found_service(ServeFile::new("static/index.html"));
+
+let app = Router::new()
+    .route("/api/state", get(get_state))
+    .route("/api/beacons", post(create_beacon))
+    .route("/api/squads", post(create_squad))
+    .route("/api/squads/:code/join", post(join_by_code))
+    .route("/api/demo/fast-forward/:beacon_id", post(fast_forward))
+    .fallback_service(static_files)
+    .layer(CorsLayer::permissive())
+    .with_state(shared)
 }
 
 #[cfg(test)]
