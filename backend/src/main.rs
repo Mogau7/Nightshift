@@ -4,6 +4,11 @@ use std::{
     time::{SystemTime, UNIX_EPOCH},
 };
 
+use tower_http::{
+    cors::CorsLayer,
+    services::{ServeDir, ServeFile},
+};
+
 use axum::{
     extract::{Path, State},
     http::StatusCode,
