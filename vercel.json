@@ -1,16 +1,10 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
-    "frontend": {
-      "root": "frontend",
-      "framework": "vite",
-      "routePrefix": "/"
-    },
-    "backend": {
-      "root": "backend",
+    "web": {
+      "root": ".",
       "runtime": "container",
       "entrypoint": "Dockerfile",
-      "routePrefix": "/api"
+      "routePrefix": "/"
     }
   }
 }
