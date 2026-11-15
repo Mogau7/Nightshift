@@ -1,8 +1,16 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+  "$schema": "https://vercel.sh",
+  "services": {
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite",
+      "routePrefix": "/"
+    },
+    "backend": {
+      "root": "backend",
+      "runtime": "container",
+      "entrypoint": "Dockerfile",
+      "routePrefix": "/api"
     }
-  ]
+  }
 }
