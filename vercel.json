@@ -1,13 +1,12 @@
 {
   "services": {
+    "frontend": {
+      "root": "nightshift/frontend"
+    },
     "backend": {
       "root": "nightshift/backend",
-      "runtime": "rust",
-      "entrypoint": "src/main.rs"
-    },
-    "frontend": {
-      "root": "nightshift/frontend",
-      "framework": "vite"
+      "runtime": "container",
+      "entrypoint": "Dockerfile"
     }
   },
   "rewrites": [
