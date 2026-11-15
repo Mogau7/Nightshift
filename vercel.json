@@ -1,4 +1,5 @@
 {
+  "$schema": "https://vercel.sh",
   "services": {
     "web": {
       "root": ".",
